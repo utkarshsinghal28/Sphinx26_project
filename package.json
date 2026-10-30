@@ -1,0 +1,28 @@
+{
+  "name": "gramsaathi",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/build-sw.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test:e2e": "node scripts/smoke-test.mjs",
+    "test:dictation": "node scripts/test-dictation.mjs"
+  },
+  "description": "A multilingual, voice-friendly phase-one demo for rural India.",
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/noto-sans-devanagari": "^5.3.0",
+    "@fontsource/noto-sans-tamil": "^5.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "lucide-react": "^1.65.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.5"
+  },
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}
