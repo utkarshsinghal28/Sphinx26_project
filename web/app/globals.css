@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff8f0;
+  --color-sand: #f6ece1;
+  --color-brand: #c2410c;
+  --color-brand-dark: #9a3412;
+  --color-leaf: #15803d;
+  --color-leaf-light: #dcfce7;
+  --color-ink: #1c1917;
+  --color-muted: #6b6560;
+  --color-line: #e7dcd0;
+  --font-sans: "Noto Sans", "Noto Sans Devanagari", "Nirmala UI", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overscroll-behavior-y: none;
+}
+
+/* Native-script labels must never be the thing that clips on a 320px phone. */
+button,
+a {
+  touch-action: manipulation;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.ring-pulse::before,
+.ring-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--color-brand);
+  animation: pulse-ring 2s cubic-bezier(0.24, 0.6, 0.35, 1) infinite;
+}
+.ring-pulse::after {
+  animation-delay: 0.7s;
+}
+
+@keyframes bar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.bar {
+  animation: bar 0.9s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring-pulse::before,
+  .ring-pulse::after,
+  .bar,
+  .fade-up {
+    animation: none !important;
+  }
+}
