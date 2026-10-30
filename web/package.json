@@ -1,11 +1,13 @@
 {
-  "name": "web",
+  "name": "vaaniseva-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "doctor": "node scripts/check-key.mjs",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
     "next": "16.4.3",

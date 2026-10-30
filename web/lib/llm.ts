@@ -21,6 +21,8 @@ export interface AskResult {
   retrieved: { scheme: string; heading: string; score: number; reason: string }[];
   /** added by the route handler */
   totalMs?: number;
+  /** why we answered in demo mode instead of live — surfaced in the trace panel */
+  llmNote?: string;
 }
 
 const SCRIPT_RE: Record<string, RegExp> = {
@@ -144,17 +146,24 @@ function extractiveAnswer(results: RetrievalResult["results"], lang: LangCode): 
   return `${L.lead}: ${preferred.chunk.scheme}. ${body}\n\n${L.source}: ${preferred.chunk.sourceName} — ${preferred.chunk.source}\n${L.note}`;
 }
 
+interface LlmAttempt {
+  text: string | null;
+  note?: string;
+}
+
 async function callGemini(
   question: string,
   lang: LangCode,
   context: string,
-): Promise<string | null> {
+): Promise<LlmAttempt> {
   const key = process.env.GEMINI_API_KEY;
-  if (!key) return null;
+  if (!key) return { text: null, note: "no GEMINI_API_KEY set — using grounded excerpt" };
   const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
   const language = getLanguage(lang);
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  // overridable so the live path can be tested without leaving the network
+  const base = process.env.GEMINI_BASE_URL || "https://generativelanguage.googleapis.com";
+  const url = `${base}/v1beta/models/${model}:generateContent`;
   const body = {
     systemInstruction: { parts: [{ text: systemPrompt(language.english, language.native) }] },
     contents: [
@@ -174,8 +183,9 @@ async function callGemini(
       signal: AbortSignal.timeout(25_000),
     });
     if (!res.ok) {
-      console.error("[llm] gemini error", res.status, (await res.text()).slice(0, 300));
-      return null;
+      const body = (await res.text()).slice(0, 300);
+      console.error("[llm] gemini error", res.status, body);
+      return { text: null, note: `Gemini ${res.status}: ${body}` };
     }
     const json = (await res.json()) as {
       candidates?: { content?: { parts?: { text?: string }[] } }[];
@@ -184,10 +194,12 @@ async function callGemini(
       .map((p) => p.text ?? "")
       .join("")
       .trim();
-    return text || null;
+    if (!text) return { text: null, note: "Gemini returned an empty response" };
+    return { text };
   } catch (err) {
-    console.error("[llm] gemini failed", err);
-    return null;
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("[llm] gemini failed", msg);
+    return { text: null, note: `could not reach Gemini (${msg})` };
   }
 }
 
@@ -224,7 +236,7 @@ export async function answerQuestion(
   }
 
   const context = buildContext(retrieval.results);
-  const live = await callGemini(question, lang, context);
+  const { text: live, note } = await callGemini(question, lang, context);
   if (live) {
     return { ...base, answer: live, mode: "live", ms: Date.now() - started };
   }
@@ -234,6 +246,7 @@ export async function answerQuestion(
     answer: extractiveAnswer(retrieval.results, lang),
     mode: "demo",
     ms: Date.now() - started,
+    llmNote: note,
   };
 }
 

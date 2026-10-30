@@ -35,6 +35,7 @@ from.
 cd web
 cp .env.example .env.local      # paste a free GEMINI_API_KEY, or leave empty for demo mode
 npm install
+npm run doctor                  # ← verify the key works from THIS machine (30s)
 npm run dev                     # http://localhost:3000
 ```
 
@@ -42,7 +43,38 @@ Voice needs a Chromium browser (Chrome / Edge / Android Chrome) for the Web Spee
 falls back to the text input. The rest works everywhere.
 
 ```bash
-node scripts/smoke.mjs          # 8 checks: retrieval across languages + the refusal guardrail
+npm run smoke                   # 8 checks: retrieval across languages + the refusal guardrail
+npm run doctor                  # key + network + a real generation
+```
+
+### Where the API key has to live
+
+The key is read **server-side only**, never shipped to the browser.
+
+| Where you run it | What to do |
+|---|---|
+| Your laptop | `web/.env.local` → `GEMINI_API_KEY=...` (gitignored, `chmod 600`) |
+| Vercel / Render | Project → Settings → Environment Variables → `GEMINI_API_KEY` |
+| A sandbox with no outbound network | Nothing works — the app detects this and answers in `demo` mode |
+
+If answers come back with a `demo` badge, open **"show retrieval trace"** under the answer: it prints
+the exact reason (`no GEMINI_API_KEY set`, `could not reach Gemini (fetch failed)`,
+`Gemini 403: ...`). That turns "it isn't working" into one sentence you can act on.
+
+`npm run doctor` separates the three failures that otherwise look identical:
+
+```
+[1/2] reaching the API ...        HTTP 200 / fetch failed / 403
+[2/2] generating a real answer ... "answered: ..."
+```
+
+There is also `scripts/fake-gemini.mjs`, a local stand-in for Google's endpoint used to prove the
+live request is well-formed (language rule present, CONTEXT injected, 800-token cap) on a machine
+that cannot reach the internet:
+
+```bash
+node scripts/fake-gemini.mjs &               # :8787
+GEMINI_BASE_URL=http://127.0.0.1:8787 npm run dev
 ```
 
 ## Architecture

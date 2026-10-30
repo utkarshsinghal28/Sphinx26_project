@@ -584,6 +584,9 @@ function AnswerCard({
           <div>
             confidence: <b>{result.confidence}</b> · intent: <b>{result.intent ?? "—"}</b>
           </div>
+          {result.llmNote && (
+            <div className="mt-1 text-amber-800">llm: {result.llmNote}</div>
+          )}
           {result.retrieved.map((r, i) => (
             <div key={i} className="text-muted">
               {r.score.toFixed(1)} · {r.reason} · {r.scheme} → {r.heading}
