@@ -1,0 +1,228 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/user/.npmrc
+5 silly config load:file:/usr/etc/npmrc
+6 verbose title npm ci
+7 verbose argv "ci"
+8 verbose logfile logs-max:10 dir:/home/user/.npm/_logs/2026-10-30T12_56_55_780Z-
+9 verbose logfile /home/user/.npm/_logs/2026-10-30T12_56_55_780Z-debug-0.log
+10 silly packumentCache heap:997720064 maxSize:249430016 maxEntrySize:124715008
+11 silly logfile done cleaning log files
+12 silly idealTree buildDeps
+13 silly reify moves {}
+14 silly audit bulk request {
+14 silly audit   '@fontsource-variable/dm-sans': [ '5.3.0' ],
+14 silly audit   '@fontsource-variable/fraunces': [ '5.3.0' ],
+14 silly audit   '@fontsource/noto-sans-devanagari': [ '5.3.0' ],
+14 silly audit   '@fontsource/noto-sans-tamil': [ '5.3.0' ],
+14 silly audit   '@oxc-project/types': [ '0.156.0' ],
+14 silly audit   '@rolldown/binding-android-arm-eabi': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-android-arm64': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-darwin-arm64': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-darwin-x64': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-freebsd-x64': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-arm-gnueabihf': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-arm64-gnu': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-arm64-musl': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-ppc64-gnu': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-s390x-gnu': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-x64-gnu': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-linux-x64-musl': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-openharmony-arm64': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-win32-arm64-msvc': [ '1.2.16' ],
+14 silly audit   '@rolldown/binding-win32-x64-msvc': [ '1.2.16' ],
+14 silly audit   '@rolldown/pluginutils': [ '1.0.1' ],
+14 silly audit   '@vitejs/plugin-react': [ '6.1.2' ],
+14 silly audit   'detect-libc': [ '2.1.2' ],
+14 silly audit   fdir: [ '6.5.0' ],
+14 silly audit   fsevents: [ '2.3.3' ],
+14 silly audit   lightningcss: [ '1.33.0' ],
+14 silly audit   'lightningcss-android-arm64': [ '1.33.0' ],
+14 silly audit   'lightningcss-darwin-arm64': [ '1.33.0' ],
+14 silly audit   'lightningcss-darwin-x64': [ '1.33.0' ],
+14 silly audit   'lightningcss-freebsd-x64': [ '1.33.0' ],
+14 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.33.0' ],
+14 silly audit   'lightningcss-linux-arm64-gnu': [ '1.33.0' ],
+14 silly audit   'lightningcss-linux-arm64-musl': [ '1.33.0' ],
+14 silly audit   'lightningcss-linux-x64-gnu': [ '1.33.0' ],
+14 silly audit   'lightningcss-linux-x64-musl': [ '1.33.0' ],
+14 silly audit   'lightningcss-win32-arm64-msvc': [ '1.33.0' ],
+14 silly audit   'lightningcss-win32-x64-msvc': [ '1.33.0' ],
+14 silly audit   'lucide-react': [ '1.65.0' ],
+14 silly audit   nanoid: [ '3.3.20' ],
+14 silly audit   picocolors: [ '1.1.1' ],
+14 silly audit   picomatch: [ '4.0.7' ],
+14 silly audit   playwright: [ '1.64.1' ],
+14 silly audit   'playwright-core': [ '1.64.1' ],
+14 silly audit   postcss: [ '8.5.32' ],
+14 silly audit   react: [ '19.3.1' ],
+14 silly audit   'react-dom': [ '19.3.1' ],
+14 silly audit   rolldown: [ '1.2.16' ],
+14 silly audit   scheduler: [ '0.28.0' ],
+14 silly audit   'source-map-js': [ '1.2.2' ],
+14 silly audit   tinyglobby: [ '0.2.17' ],
+14 silly audit   vite: [ '8.3.5' ]
+14 silly audit }
+15 verbose reify failed optional dependency /home/user/node_modules/lightningcss-win32-x64-msvc
+16 silly reify mark deleted [ '/home/user/node_modules/lightningcss-win32-x64-msvc' ]
+17 verbose reify failed optional dependency /home/user/node_modules/lightningcss-win32-arm64-msvc
+18 silly reify mark deleted [ '/home/user/node_modules/lightningcss-win32-arm64-msvc' ]
+19 verbose reify failed optional dependency /home/user/node_modules/lightningcss-linux-arm64-musl
+20 silly reify mark deleted [ '/home/user/node_modules/lightningcss-linux-arm64-musl' ]
+21 verbose reify failed optional dependency /home/user/node_modules/lightningcss-linux-arm64-gnu
+22 silly reify mark deleted [ '/home/user/node_modules/lightningcss-linux-arm64-gnu' ]
+23 verbose reify failed optional dependency /home/user/node_modules/lightningcss-linux-arm-gnueabihf
+24 silly reify mark deleted [ '/home/user/node_modules/lightningcss-linux-arm-gnueabihf' ]
+25 verbose reify failed optional dependency /home/user/node_modules/lightningcss-freebsd-x64
+26 silly reify mark deleted [ '/home/user/node_modules/lightningcss-freebsd-x64' ]
+27 verbose reify failed optional dependency /home/user/node_modules/lightningcss-darwin-x64
+28 silly reify mark deleted [ '/home/user/node_modules/lightningcss-darwin-x64' ]
+29 verbose reify failed optional dependency /home/user/node_modules/lightningcss-darwin-arm64
+30 silly reify mark deleted [ '/home/user/node_modules/lightningcss-darwin-arm64' ]
+31 verbose reify failed optional dependency /home/user/node_modules/lightningcss-android-arm64
+32 silly reify mark deleted [ '/home/user/node_modules/lightningcss-android-arm64' ]
+33 verbose reify failed optional dependency /home/user/node_modules/fsevents
+34 silly reify mark deleted [ '/home/user/node_modules/fsevents' ]
+35 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-win32-x64-msvc
+36 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-win32-x64-msvc' ]
+37 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-win32-arm64-msvc
+38 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-win32-arm64-msvc' ]
+39 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-openharmony-arm64
+40 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-openharmony-arm64' ]
+41 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-linux-s390x-gnu
+42 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-linux-s390x-gnu' ]
+43 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-linux-ppc64-gnu
+44 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-linux-ppc64-gnu' ]
+45 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-linux-arm64-musl
+46 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-linux-arm64-musl' ]
+47 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-linux-arm64-gnu
+48 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-linux-arm64-gnu' ]
+49 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-linux-arm-gnueabihf
+50 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-linux-arm-gnueabihf' ]
+51 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-freebsd-x64
+52 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-freebsd-x64' ]
+53 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-darwin-x64
+54 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-darwin-x64' ]
+55 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-darwin-arm64
+56 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-darwin-arm64' ]
+57 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-android-arm64
+58 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-android-arm64' ]
+59 verbose reify failed optional dependency /home/user/node_modules/@rolldown/binding-android-arm-eabi
+60 silly reify mark deleted [ '/home/user/node_modules/@rolldown/binding-android-arm-eabi' ]
+61 silly tarball no local data for vite@https://registry.npmjs.org/vite/-/vite-8.3.5.tgz. Extracting by manifest.
+62 silly tarball no local data for tinyglobby@https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz. Extracting by manifest.
+63 silly tarball no local data for source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz. Extracting by manifest.
+64 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz. Extracting by manifest.
+65 silly tarball no local data for rolldown@https://registry.npmjs.org/rolldown/-/rolldown-1.2.16.tgz. Extracting by manifest.
+66 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz. Extracting by manifest.
+67 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-19.3.1.tgz. Extracting by manifest.
+68 silly tarball no local data for postcss@https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz. Extracting by manifest.
+69 silly tarball no local data for playwright-core@https://registry.npmjs.org/playwright-core/-/playwright-core-1.64.1.tgz. Extracting by manifest.
+70 silly tarball no local data for playwright@https://registry.npmjs.org/playwright/-/playwright-1.64.1.tgz. Extracting by manifest.
+71 silly tarball no local data for picomatch@https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz. Extracting by manifest.
+72 silly tarball no local data for picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz. Extracting by manifest.
+73 silly tarball no local data for nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.20.tgz. Extracting by manifest.
+74 silly tarball no local data for lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-1.65.0.tgz. Extracting by manifest.
+75 silly tarball no local data for lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz. Extracting by manifest.
+76 silly tarball no local data for lightningcss-linux-x64-gnu@https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.33.0.tgz. Extracting by manifest.
+77 silly tarball no local data for lightningcss@https://registry.npmjs.org/lightningcss/-/lightningcss-1.33.0.tgz. Extracting by manifest.
+78 silly tarball no local data for fdir@https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz. Extracting by manifest.
+79 silly tarball no local data for detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz. Extracting by manifest.
+80 silly tarball no local data for @vitejs/plugin-react@https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-6.1.2.tgz. Extracting by manifest.
+81 silly tarball no local data for @rolldown/pluginutils@https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz. Extracting by manifest.
+82 silly tarball no local data for @rolldown/binding-linux-x64-musl@https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.16.tgz. Extracting by manifest.
+83 silly tarball no local data for @rolldown/binding-linux-x64-gnu@https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.16.tgz. Extracting by manifest.
+84 silly tarball no local data for @oxc-project/types@https://registry.npmjs.org/@oxc-project/types/-/types-0.156.0.tgz. Extracting by manifest.
+85 silly tarball no local data for @fontsource/noto-sans-devanagari@https://registry.npmjs.org/@fontsource/noto-sans-devanagari/-/noto-sans-devanagari-5.3.0.tgz. Extracting by manifest.
+86 silly tarball no local data for @fontsource-variable/fraunces@https://registry.npmjs.org/@fontsource-variable/fraunces/-/fraunces-5.3.0.tgz. Extracting by manifest.
+87 silly tarball no local data for @fontsource-variable/dm-sans@https://registry.npmjs.org/@fontsource-variable/dm-sans/-/dm-sans-5.3.0.tgz. Extracting by manifest.
+88 silly tarball no local data for @fontsource/noto-sans-tamil@https://registry.npmjs.org/@fontsource/noto-sans-tamil/-/noto-sans-tamil-5.3.0.tgz. Extracting by manifest.
+89 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 175ms
+90 silly audit report {}
+91 http fetch GET 200 https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz 526ms (cache miss)
+92 http fetch GET 200 https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 520ms (cache miss)
+93 http fetch GET 200 https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz 515ms (cache miss)
+94 http fetch GET 200 https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-6.1.2.tgz 528ms (cache miss)
+95 http fetch GET 200 https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 543ms (cache miss)
+96 http fetch GET 200 https://registry.npmjs.org/@oxc-project/types/-/types-0.156.0.tgz 559ms (cache miss)
+97 http fetch GET 200 https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz 568ms (cache miss)
+98 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz 589ms (cache miss)
+99 http fetch GET 200 https://registry.npmjs.org/nanoid/-/nanoid-3.3.20.tgz 583ms (cache miss)
+100 http fetch GET 200 https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz 623ms (cache miss)
+101 http fetch GET 200 https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz 654ms (cache miss)
+102 http fetch GET 200 https://registry.npmjs.org/react/-/react-19.3.1.tgz 669ms (cache miss)
+103 http fetch GET 200 https://registry.npmjs.org/lightningcss/-/lightningcss-1.33.0.tgz 699ms (cache miss)
+104 http fetch GET 200 https://registry.npmjs.org/@fontsource-variable/dm-sans/-/dm-sans-5.3.0.tgz 732ms (cache miss)
+105 http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz 771ms (cache miss)
+106 http fetch GET 200 https://registry.npmjs.org/rolldown/-/rolldown-1.2.16.tgz 887ms (cache miss)
+107 http fetch GET 200 https://registry.npmjs.org/@fontsource/noto-sans-tamil/-/noto-sans-tamil-5.3.0.tgz 922ms (cache miss)
+108 http fetch GET 200 https://registry.npmjs.org/@fontsource-variable/fraunces/-/fraunces-5.3.0.tgz 968ms (cache miss)
+109 http fetch GET 200 https://registry.npmjs.org/vite/-/vite-8.3.5.tgz 1013ms (cache miss)
+110 http fetch GET 200 https://registry.npmjs.org/@fontsource/noto-sans-devanagari/-/noto-sans-devanagari-5.3.0.tgz 1025ms (cache miss)
+111 http fetch GET 200 https://registry.npmjs.org/playwright/-/playwright-1.64.1.tgz 1203ms (cache miss)
+112 http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz 1384ms (cache miss)
+113 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz 1505ms (cache miss)
+114 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.33.0.tgz 1504ms (cache miss)
+115 http fetch GET 200 https://registry.npmjs.org/playwright-core/-/playwright-core-1.64.1.tgz 1745ms (cache miss)
+116 http fetch GET 200 https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.16.tgz 1923ms (cache miss)
+117 http fetch GET 200 https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.16.tgz 1930ms (cache miss)
+118 http fetch GET 200 https://registry.npmjs.org/lucide-react/-/lucide-react-1.65.0.tgz 2604ms (cache miss)
+119 silly ADD node_modules/vite
+120 silly ADD node_modules/tinyglobby
+121 silly ADD node_modules/source-map-js
+122 silly ADD node_modules/scheduler
+123 silly ADD node_modules/rolldown
+124 silly ADD node_modules/react-dom
+125 silly ADD node_modules/react
+126 silly ADD node_modules/postcss
+127 silly ADD node_modules/playwright-core
+128 silly ADD node_modules/playwright
+129 silly ADD node_modules/picomatch
+130 silly ADD node_modules/picocolors
+131 silly ADD node_modules/nanoid
+132 silly ADD node_modules/lucide-react
+133 silly ADD
+134 silly ADD
+135 silly ADD node_modules/lightningcss-linux-x64-musl
+136 silly ADD node_modules/lightningcss-linux-x64-gnu
+137 silly ADD
+138 silly ADD
+139 silly ADD
+140 silly ADD
+141 silly ADD
+142 silly ADD
+143 silly ADD
+144 silly ADD node_modules/lightningcss
+145 silly ADD
+146 silly ADD node_modules/fdir
+147 silly ADD node_modules/detect-libc
+148 silly ADD node_modules/@vitejs/plugin-react
+149 silly ADD node_modules/@rolldown/pluginutils
+150 silly ADD
+151 silly ADD
+152 silly ADD
+153 silly ADD node_modules/@rolldown/binding-linux-x64-musl
+154 silly ADD node_modules/@rolldown/binding-linux-x64-gnu
+155 silly ADD
+156 silly ADD
+157 silly ADD
+158 silly ADD
+159 silly ADD
+160 silly ADD
+161 silly ADD
+162 silly ADD
+163 silly ADD
+164 silly ADD
+165 silly ADD node_modules/@oxc-project/types
+166 silly ADD node_modules/@fontsource/noto-sans-tamil
+167 silly ADD node_modules/@fontsource/noto-sans-devanagari
+168 silly ADD node_modules/@fontsource-variable/fraunces
+169 silly ADD node_modules/@fontsource-variable/dm-sans
+170 verbose cwd /home/user
+171 verbose os Linux 6.1.158+
+172 verbose node v20.20.2
+173 verbose npm  v10.8.2
+174 verbose exit 0
+175 info ok
